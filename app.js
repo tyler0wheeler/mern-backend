@@ -31,7 +31,6 @@ app.use((req,res,next) => {
 
 app.use((error, req, res, next)=>{
     if (req.file) {
-        console.log("This is the req.file in app.js", req.file)
         fs.unlink(req.file.location, err => {
             console.log(err)
         })
